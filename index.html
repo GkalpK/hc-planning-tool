@@ -8,281 +8,237 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: #f4f6fa;
-    color: #1a202c;
-    line-height: 1.5;
-    padding: 20px;
-    min-height: 100vh;
+    background: #f4f6fa; color: #1a202c; line-height: 1.5;
+    padding: 20px; min-height: 100vh;
   }
-  .container { max-width: 1100px; margin: 0 auto; }
+  .container { max-width: 1180px; margin: 0 auto; }
 
   .header {
     position: relative;
     background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-    color: white;
-    padding: 28px 32px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 20px rgba(30,64,175,0.18);
+    color: white; padding: 28px 32px; border-radius: 12px;
+    margin-bottom: 20px; box-shadow: 0 4px 20px rgba(30,64,175,0.18);
   }
   .header h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.3px; }
   .header p { font-size: 13px; opacity: 0.9; }
 
   .lang-toggle {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    display: flex;
-    gap: 2px;
-    background: rgba(255,255,255,0.15);
-    padding: 3px;
-    border-radius: 6px;
-    backdrop-filter: blur(10px);
+    position: absolute; top: 24px; right: 24px;
+    display: flex; gap: 2px; background: rgba(255,255,255,0.15);
+    padding: 3px; border-radius: 6px;
   }
   .lang-toggle button {
-    background: transparent;
-    color: white;
-    border: none;
-    padding: 5px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 600;
-    transition: background 0.15s;
+    background: transparent; color: white; border: none;
+    padding: 5px 12px; border-radius: 4px; cursor: pointer;
+    font-size: 12px; font-weight: 600;
   }
   .lang-toggle button.active { background: rgba(255,255,255,0.3); }
 
   .card {
-    background: white;
-    border-radius: 12px;
-    padding: 22px 24px;
+    background: white; border-radius: 12px; padding: 22px 24px;
     margin-bottom: 14px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
     border: 1px solid #e5e7eb;
-    transition: box-shadow 0.2s;
   }
   .card.active { box-shadow: 0 4px 12px rgba(37,99,235,0.08); border-color: #bfdbfe; }
 
   .card-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #e5e7eb;
+    display: flex; align-items: center; margin-bottom: 16px;
+    padding-bottom: 12px; border-bottom: 1px solid #e5e7eb;
   }
   .step-num {
-    background: #2563eb;
-    color: white;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 13px;
-    margin-right: 12px;
-    flex-shrink: 0;
+    background: #2563eb; color: white;
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 13px; margin-right: 12px; flex-shrink: 0;
   }
   .step-num.done { background: #10b981; }
   .card-title-wrap { display: flex; flex-direction: column; }
   .card-title { font-size: 15px; font-weight: 600; color: #1a202c; line-height: 1.2; }
   .card-subtitle { font-size: 12px; color: #6b7280; margin-top: 2px; }
 
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 12px;
-  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 12px; }
   .form-row.three { grid-template-columns: 1fr 1fr 1fr; }
   .form-row:last-child { margin-bottom: 0; }
 
   .form-group { display: flex; flex-direction: column; }
   .form-group label {
-    font-size: 12px;
-    font-weight: 600;
-    color: #374151;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
+    font-size: 12px; font-weight: 600; color: #374151;
+    margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.3px;
   }
-  .form-group .hint {
-    font-size: 11px;
-    color: #9ca3af;
-    margin-top: 4px;
-  }
+  .form-group .hint { font-size: 11px; color: #9ca3af; margin-top: 4px; }
 
   select, input[type="number"], input[type="text"] {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    font-size: 14px;
-    font-family: inherit;
-    background: white;
-    color: #1a202c;
-    transition: all 0.15s;
+    width: 100%; padding: 10px 12px;
+    border: 1px solid #d1d5db; border-radius: 6px;
+    font-size: 14px; font-family: inherit;
+    background: white; color: #1a202c; transition: all 0.15s;
   }
   select { cursor: pointer; }
   select:focus, input:focus {
-    outline: none;
-    border-color: #2563eb;
+    outline: none; border-color: #2563eb;
     box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
   }
   select:disabled, input:disabled {
-    background: #f9fafb;
-    color: #9ca3af;
-    cursor: not-allowed;
+    background: #f9fafb; color: #9ca3af; cursor: not-allowed;
   }
 
-  .btn-row { display: flex; gap: 10px; margin-top: 18px; padding-top: 18px; border-top: 1px solid #e5e7eb; }
+  .metrics-section {
+    background: #f9fafb; border-radius: 8px;
+    padding: 16px; margin-top: 14px; border: 1px solid #e5e7eb;
+  }
+  .section-header {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;
+  }
+  .section-header h4 {
+    font-size: 12px; color: #374151; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+  .disclaimer {
+    background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af;
+    padding: 8px 12px; border-radius: 6px; font-size: 12px; margin-bottom: 12px;
+  }
+  .disclaimer strong { font-weight: 700; }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: minmax(200px, 2.2fr) 1fr 1fr 0.8fr 40px;
+    gap: 8px; align-items: center;
+  }
+  .metrics-grid .col-header {
+    font-size: 11px; color: #6b7280; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.3px; padding: 6px 4px;
+  }
+  .metrics-grid input { padding: 8px 10px; font-size: 13px; background: white; }
+  .metrics-grid .remove-btn {
+    background: transparent; color: #ef4444; border: 1px solid #fecaca;
+    width: 32px; height: 32px; border-radius: 6px;
+    cursor: pointer; font-size: 14px; padding: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .metrics-grid .remove-btn:hover { background: #fee2e2; }
+
+  .add-metric-btn {
+    margin-top: 10px; background: white; color: #2563eb;
+    border: 1px dashed #93c5fd; padding: 9px 16px;
+    border-radius: 6px; font-size: 13px; font-weight: 600;
+    cursor: pointer; width: 100%; transition: all 0.15s;
+  }
+  .add-metric-btn:hover { background: #eff6ff; border-style: solid; }
+
+  .weight-total {
+    margin-top: 12px; padding: 10px 14px;
+    background: white; border-radius: 6px; border: 1px solid #e5e7eb;
+    display: flex; justify-content: space-between; align-items: center; font-size: 13px;
+  }
+  .weight-total .label { color: #6b7280; font-weight: 600; }
+  .weight-total .value { font-weight: 700; font-size: 14px; }
+  .weight-total.ok .value { color: #059669; }
+  .weight-total.warn .value { color: #dc2626; }
+
+  .btn-row {
+    display: flex; gap: 10px; margin-top: 18px;
+    padding-top: 18px; border-top: 1px solid #e5e7eb; flex-wrap: wrap;
+  }
   .btn {
-    background: #2563eb;
-    color: white;
-    border: none;
-    padding: 11px 24px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.15s;
-    font-family: inherit;
+    background: #2563eb; color: white; border: none;
+    padding: 11px 24px; border-radius: 6px;
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    font-family: inherit; transition: background 0.15s;
   }
   .btn:hover { background: #1d4ed8; }
-  .btn-secondary {
-    background: white;
-    color: #374151;
-    border: 1px solid #d1d5db;
-  }
+  .btn-secondary { background: white; color: #374151; border: 1px solid #d1d5db; }
   .btn-secondary:hover { background: #f9fafb; border-color: #9ca3af; }
-  .btn-icon { background: transparent; color: #6b7280; border: 1px solid #d1d5db; padding: 8px 14px; font-size: 12px; }
+  .btn-icon {
+    background: transparent; color: #6b7280;
+    border: 1px solid #d1d5db; padding: 8px 14px; font-size: 12px;
+  }
   .btn-icon:hover { background: #f9fafb; color: #374151; }
 
-  .benchmark-section {
-    background: #f9fafb;
-    border-radius: 8px;
-    padding: 16px;
-    margin-top: 14px;
-    border: 1px solid #e5e7eb;
-  }
-  .benchmark-section h4 {
-    font-size: 12px;
-    color: #374151;
-    margin-bottom: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-  }
-
   .results-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin-bottom: 20px;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 14px; margin-bottom: 20px;
   }
   .scenario-card {
-    background: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    padding: 18px;
-    border-left-width: 4px;
+    background: #f9fafb; border: 1px solid #e5e7eb;
+    border-radius: 10px; padding: 18px; border-left-width: 4px;
   }
   .scenario-card.surplus { border-left-color: #10b981; background: #f0fdf4; border-color: #bbf7d0; }
   .scenario-card.deficit { border-left-color: #ef4444; background: #fef2f2; border-color: #fecaca; }
   .scenario-card.balanced { border-left-color: #f59e0b; background: #fffbeb; border-color: #fde68a; }
 
   .scenario-label {
-    font-size: 11px;
-    color: #6b7280;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 10px;
+    font-size: 11px; color: #6b7280; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px;
   }
   .scenario-value {
-    font-size: 32px;
-    font-weight: 700;
-    color: #1a202c;
-    line-height: 1;
-    margin-bottom: 4px;
+    font-size: 32px; font-weight: 700; color: #1a202c;
+    line-height: 1; margin-bottom: 4px;
   }
-  .scenario-detail {
-    font-size: 12px;
-    color: #6b7280;
-    margin-bottom: 12px;
-  }
+  .scenario-detail { font-size: 12px; color: #6b7280; margin-bottom: 12px; }
   .scenario-status {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.2px;
+    display: inline-block; padding: 4px 10px; border-radius: 12px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.2px;
   }
   .scenario-status.surplus { background: #d1fae5; color: #065f46; }
   .scenario-status.deficit { background: #fee2e2; color: #991b1b; }
   .scenario-status.balanced { background: #fef3c7; color: #92400e; }
 
+  .breakdown-section {
+    background: white; padding: 18px; border-radius: 10px;
+    border: 1px solid #e5e7eb; margin-bottom: 16px;
+  }
+  .breakdown-section h3 {
+    font-size: 13px; color: #374151; margin-bottom: 14px;
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px;
+  }
+  .breakdown-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .breakdown-table th {
+    text-align: left; padding: 10px 12px; background: #f9fafb;
+    color: #6b7280; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.3px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .breakdown-table th.right, .breakdown-table td.right { text-align: right; }
+  .breakdown-table td {
+    padding: 12px; border-bottom: 1px solid #f3f4f6; color: #1a202c;
+  }
+  .breakdown-table tr:last-child td { border-bottom: none; }
+  .breakdown-table tfoot td {
+    background: #f9fafb; font-weight: 700; border-top: 2px solid #e5e7eb;
+  }
+
   .summary {
     background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 4px solid #2563eb;
+    padding: 20px; border-radius: 10px; border-left: 4px solid #2563eb;
   }
   .summary h3 {
-    font-size: 13px;
-    color: #374151;
-    margin-bottom: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
+    font-size: 13px; color: #374151; margin-bottom: 12px;
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px;
   }
   .summary-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 9px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    font-size: 13px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 9px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-size: 13px;
   }
   .summary-row:last-child { border-bottom: none; }
   .summary-row span:first-child { color: #6b7280; }
   .summary-row span:last-child { font-weight: 600; color: #1a202c; }
 
-  .chart-section {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #e5e7eb;
-    margin-bottom: 16px;
-  }
-  .chart-section h3 {
-    font-size: 13px;
-    color: #374151;
-    margin-bottom: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-  }
-  .chart-container { width: 100%; overflow-x: auto; }
-
   .footer-note {
-    text-align: center;
-    color: #9ca3af;
-    font-size: 11px;
-    margin-top: 24px;
-    padding: 12px;
+    text-align: center; color: #9ca3af; font-size: 11px;
+    margin-top: 24px; padding: 12px;
   }
 
   @media (max-width: 768px) {
     body { padding: 12px; }
-    .form-row, .form-row.three, .results-grid {
-      grid-template-columns: 1fr;
-    }
+    .form-row, .form-row.three, .results-grid { grid-template-columns: 1fr; }
+    .metrics-grid { grid-template-columns: 1fr; }
+    .metrics-grid .col-header { display: none; }
     .header { padding: 20px; }
     .header h1 { font-size: 18px; padding-right: 80px; }
     .lang-toggle { top: 16px; right: 16px; }
+    .breakdown-table { font-size: 11px; }
+    .breakdown-table td, .breakdown-table th { padding: 8px 6px; }
   }
 </style>
 </head>
@@ -297,7 +253,6 @@
     </div>
   </div>
 
-  <!-- Step 1: Function -->
   <div class="card active" id="card1">
     <div class="card-header">
       <div class="step-num" id="step1Num">1</div>
@@ -313,7 +268,6 @@
     </div>
   </div>
 
-  <!-- Step 2: Org Unit -->
   <div class="card" id="card2">
     <div class="card-header">
       <div class="step-num" id="step2Num">2</div>
@@ -329,13 +283,12 @@
     </div>
   </div>
 
-  <!-- Step 3: Inputs -->
   <div class="card" id="card3" style="display:none;">
     <div class="card-header">
       <div class="step-num" id="step3Num">3</div>
       <div class="card-title-wrap">
-        <span class="card-title" data-en="HC &amp; Productivity Data" data-tr="HC ve Verimlilik Verileri">HC &amp; Productivity Data</span>
-        <span class="card-subtitle" data-en="Enter current HC and workload information" data-tr="Mevcut HC ve iş hacmi bilgilerini girin">Enter current HC and workload information</span>
+        <span class="card-title" data-en="HC, Metrics &amp; Weights" data-tr="HC, Metrikler ve Ağırlıklar">HC, Metrics &amp; Weights</span>
+        <span class="card-subtitle" data-en="Enter current HC and define productivity metrics" data-tr="Mevcut HC'yi girin ve verimlilik metriklerini tanımlayın">Enter current HC and define productivity metrics</span>
       </div>
     </div>
 
@@ -344,19 +297,6 @@
         <label data-en="Current HC (FTE)" data-tr="Mevcut HC (FTE)">Current HC (FTE)</label>
         <input type="number" id="currentHC" placeholder="e.g. 12" min="0" step="0.5">
         <span class="hint" data-en="Current employee count in the unit" data-tr="Birimdeki mevcut çalışan sayısı">Current employee count in the unit</span>
-      </div>
-      <div class="form-group">
-        <label data-en="Monthly Transaction Volume" data-tr="Aylık İş Hacmi">Monthly Transaction Volume</label>
-        <input type="number" id="monthlyVolume" placeholder="e.g. 4000" min="0">
-        <span class="hint" data-en="Monthly transactions / requests / output" data-tr="Aylık işlem / talep / çıktı sayısı">Monthly transactions / requests / output</span>
-      </div>
-    </div>
-
-    <div class="form-row">
-      <div class="form-group">
-        <label data-en="Productivity Metric" data-tr="Verimlilik Metriği">Productivity Metric</label>
-        <input type="text" id="metricName" placeholder="e.g. PO Items" value="PO Items">
-        <span class="hint" data-en="Unit of measurement (PO, invoice, ticket, etc.)" data-tr="Ölçüm birimi (PO, fatura, talep, vb.)">Unit of measurement (PO, invoice, ticket, etc.)</span>
       </div>
       <div class="form-group">
         <label data-en="Working Hours / Day" data-tr="Çalışma Saati / Gün">Working Hours / Day</label>
@@ -368,31 +308,62 @@
       </div>
     </div>
 
-    <div class="benchmark-section">
-      <h4 data-en="Benchmark Scenarios (per person / month)" data-tr="Benchmark Senaryoları (kişi başı / ay)">Benchmark Scenarios (per person / month)</h4>
+    <div class="metrics-section">
+      <div class="section-header">
+        <h4 data-en="Productivity Metrics" data-tr="Verimlilik Metrikleri">Productivity Metrics</h4>
+      </div>
+      <div class="disclaimer" id="presetNote">
+        <strong data-en="ℹ FMCG sector defaults loaded." data-tr="ℹ FMCG sektör varsayılanları yüklendi.">ℹ FMCG sector defaults loaded.</strong>
+        <span data-en=" Adjust benchmarks/weights, remove rows, or add your own metrics as needed." data-tr=" Benchmark/ağırlıkları düzenleyin, satırları silin veya kendi metriklerinizi ekleyin."> Adjust benchmarks/weights, remove rows, or add your own metrics as needed.</span>
+      </div>
+
+      <div class="metrics-grid" id="metricsHeader">
+        <div class="col-header" data-en="Metric Name" data-tr="Metrik Adı">Metric Name</div>
+        <div class="col-header" data-en="Monthly Volume" data-tr="Aylık Hacim">Monthly Volume</div>
+        <div class="col-header" data-en="Benchmark / person / month" data-tr="Benchmark / kişi / ay">Benchmark / person / month</div>
+        <div class="col-header" data-en="Weight (%)" data-tr="Ağırlık (%)">Weight (%)</div>
+        <div class="col-header"></div>
+      </div>
+      <div id="metricsTable"></div>
+
+      <button class="add-metric-btn" onclick="addMetric()">
+        <span data-en="+ Add Metric" data-tr="+ Metrik Ekle">+ Add Metric</span>
+      </button>
+
+      <div class="weight-total" id="weightTotalBox">
+        <span class="label" data-en="Total Weight" data-tr="Toplam Ağırlık">Total Weight</span>
+        <span class="value" id="weightTotal">0%</span>
+      </div>
+    </div>
+
+    <div class="metrics-section" style="margin-top: 14px;">
+      <h4 style="font-size:12px; color:#374151; font-weight:700; text-transform:uppercase; letter-spacing:0.3px; margin-bottom:10px;" data-en="Sensitivity Scenarios (benchmark multipliers)" data-tr="Hassasiyet Senaryoları (benchmark çarpanları)">Sensitivity Scenarios (benchmark multipliers)</h4>
       <div class="form-row three">
         <div class="form-group">
           <label data-en="Conservative" data-tr="Konservatif">Conservative</label>
-          <input type="number" id="bm1" value="300" min="1">
+          <input type="number" id="mult1" value="0.85" min="0.1" step="0.05">
+          <span class="hint" data-en="Below-average productivity" data-tr="Ortalama altı verimlilik">Below-average productivity</span>
         </div>
         <div class="form-group">
-          <label data-en="Moderate" data-tr="Orta">Moderate</label>
-          <input type="number" id="bm2" value="356" min="1">
+          <label data-en="Moderate (base)" data-tr="Orta (baz)">Moderate (base)</label>
+          <input type="number" id="mult2" value="1.00" min="0.1" step="0.05">
+          <span class="hint" data-en="Standard benchmark" data-tr="Standart benchmark">Standard benchmark</span>
         </div>
         <div class="form-group">
           <label data-en="Aggressive (8-hr adj.)" data-tr="Agresif (8-saat)">Aggressive (8-hr adj.)</label>
-          <input type="number" id="bm3" value="400" min="1">
+          <input type="number" id="mult3" value="1.15" min="0.1" step="0.05">
+          <span class="hint" data-en="Stretch productivity" data-tr="Stretch verimlilik">Stretch productivity</span>
         </div>
       </div>
     </div>
 
     <div class="btn-row">
       <button class="btn" onclick="calculate()" data-en="Calculate" data-tr="Hesapla">Calculate</button>
-      <button class="btn btn-secondary" onclick="resetForm()" data-en="Reset" data-tr="Sıfırla">Reset</button>
+      <button class="btn btn-secondary" onclick="loadPresets()" data-en="Reload Defaults" data-tr="Varsayılanları Yükle">Reload Defaults</button>
+      <button class="btn btn-secondary" onclick="clearMetrics()" data-en="Clear All" data-tr="Tümünü Temizle">Clear All</button>
     </div>
   </div>
 
-  <!-- Step 4: Results -->
   <div class="card" id="card4" style="display:none;">
     <div class="card-header">
       <div class="step-num done">✓</div>
@@ -414,8 +385,7 @@
 </div>
 
 <script>
-  // Function -> Org Units mapping (from Excel data)
-  const data = {
+  const orgData = {
     "Administrative Affairs": ["Administrative Affairs", "Infirmary", "Security", "Technical Affairs"],
     "Audit": ["Audit"],
     "Corporate Communication": ["Corporate Communication"],
@@ -437,51 +407,300 @@
     "Trade Marketing": ["Sales Support", "Trade Marketing"]
   };
 
+  // Preset metrics by Function|Org Unit. Benchmarks are general FMCG sector references.
+  const presets = {
+    "Administrative Affairs|Administrative Affairs": [
+      { name: "Service Requests Handled", benchmark: 150, weight: 70 },
+      { name: "Documents/Reports Processed", benchmark: 80, weight: 30 }
+    ],
+    "Administrative Affairs|Infirmary": [
+      { name: "Patient Visits", benchmark: 250, weight: 80 },
+      { name: "Health Records Maintained", benchmark: 300, weight: 20 }
+    ],
+    "Administrative Affairs|Security": [
+      { name: "Shifts Covered (per guard)", benchmark: 22, weight: 100 }
+    ],
+    "Administrative Affairs|Technical Affairs": [
+      { name: "Maintenance Work Orders", benchmark: 60, weight: 70 },
+      { name: "Facility Inspections", benchmark: 30, weight: 30 }
+    ],
+    "Audit|Audit": [
+      { name: "Audit Engagements", benchmark: 2, weight: 70 },
+      { name: "Reports Issued", benchmark: 3, weight: 30 }
+    ],
+    "Corporate Communication|Corporate Communication": [
+      { name: "Internal Communications", benchmark: 20, weight: 50 },
+      { name: "External PR/Press Releases", benchmark: 8, weight: 30 },
+      { name: "Social Media Posts", benchmark: 30, weight: 20 }
+    ],
+    "Finance|Accounting": [
+      { name: "Invoices Processed", benchmark: 800, weight: 50 },
+      { name: "Journal Entries", benchmark: 300, weight: 30 },
+      { name: "Reconciliations", benchmark: 60, weight: 20 }
+    ],
+    "Finance|Customer Credit Risk": [
+      { name: "Credit Assessments", benchmark: 80, weight: 70 },
+      { name: "Risk Reports", benchmark: 15, weight: 30 }
+    ],
+    "Finance|Finance": [
+      { name: "Financial Reports Generated", benchmark: 25, weight: 60 },
+      { name: "Account Reconciliations", benchmark: 40, weight: 40 }
+    ],
+    "Finance|Financial Planning and Analysis": [
+      { name: "Forecasts/Budgets Prepared", benchmark: 8, weight: 60 },
+      { name: "Variance Analyses", benchmark: 15, weight: 40 }
+    ],
+    "Finance|Production Finance": [
+      { name: "Cost Reports", benchmark: 20, weight: 60 },
+      { name: "Production Variance Analyses", benchmark: 25, weight: 40 }
+    ],
+    "Finance|Sales Finance": [
+      { name: "Sales Performance Reports", benchmark: 25, weight: 50 },
+      { name: "Channel/Trade Spend Analyses", benchmark: 20, weight: 50 }
+    ],
+    "Finance|Treasury": [
+      { name: "Payments Processed", benchmark: 400, weight: 60 },
+      { name: "Cash Position Reports", benchmark: 22, weight: 40 }
+    ],
+    "General Management|General Management": [
+      { name: "Strategic Decisions/Reviews", benchmark: 20, weight: 100 }
+    ],
+    "Health, Safety and Environment|Health, Safety and Environment": [
+      { name: "HSE Audits Conducted", benchmark: 12, weight: 40 },
+      { name: "Training Sessions Delivered", benchmark: 8, weight: 30 },
+      { name: "Incident Investigations", benchmark: 6, weight: 30 }
+    ],
+    "Human Resources|Compensation & Benefits": [
+      { name: "Salary Actions Processed", benchmark: 120, weight: 50 },
+      { name: "Benefit Enrollments/Changes", benchmark: 80, weight: 30 },
+      { name: "C&B Reports/Analyses", benchmark: 10, weight: 20 }
+    ],
+    "Human Resources|HR Business Partner": [
+      { name: "Employees Supported (HRBP ratio)", benchmark: 120, weight: 100 }
+    ],
+    "Human Resources|Human Resources": [
+      { name: "Employee Records Managed", benchmark: 200, weight: 50 },
+      { name: "HR Cases Resolved", benchmark: 60, weight: 50 }
+    ],
+    "Human Resources|Talent Management": [
+      { name: "Requisitions Filled", benchmark: 12, weight: 50 },
+      { name: "Training Programs Delivered", benchmark: 6, weight: 30 },
+      { name: "Talent Reviews Conducted", benchmark: 30, weight: 20 }
+    ],
+    "Hygiene Production|Electrical & Mechanical Maintenance": [
+      { name: "Work Orders Completed", benchmark: 50, weight: 70 },
+      { name: "Preventive Maintenance Tasks", benchmark: 30, weight: 30 }
+    ],
+    "Hygiene Production|Electrical and Automation Maintenance": [
+      { name: "Work Orders Completed", benchmark: 45, weight: 70 },
+      { name: "Calibrations/Inspections", benchmark: 25, weight: 30 }
+    ],
+    "Hygiene Production|Energy": [
+      { name: "Energy System Inspections", benchmark: 20, weight: 60 },
+      { name: "Energy Performance Reports", benchmark: 8, weight: 40 }
+    ],
+    "Hygiene Production|Mechanical Maintenance & Auxiliary Unit": [
+      { name: "Work Orders Completed", benchmark: 50, weight: 70 },
+      { name: "Equipment Inspections", benchmark: 30, weight: 30 }
+    ],
+    "Hygiene Production|Production": [
+      { name: "Production Lines Managed", benchmark: 1, weight: 50 },
+      { name: "Shifts Covered", benchmark: 22, weight: 50 }
+    ],
+    "Information Technologies|Infrastructure & Operations": [
+      { name: "Tickets Resolved", benchmark: 120, weight: 60 },
+      { name: "Systems/Servers Maintained", benchmark: 25, weight: 40 }
+    ],
+    "Legal|Legal": [
+      { name: "Contracts Reviewed", benchmark: 25, weight: 60 },
+      { name: "Legal Cases/Matters", benchmark: 8, weight: 40 }
+    ],
+    "Marketing|Hygiene": [
+      { name: "Campaigns Managed", benchmark: 2, weight: 50 },
+      { name: "Brand SKUs Managed", benchmark: 15, weight: 50 }
+    ],
+    "Marketing|Marketing": [
+      { name: "Campaigns Managed", benchmark: 2, weight: 50 },
+      { name: "Marketing Plans Delivered", benchmark: 4, weight: 50 }
+    ],
+    "Marketing|Tissue and Personal Health Care": [
+      { name: "Campaigns Managed", benchmark: 2, weight: 50 },
+      { name: "Brand SKUs Managed", benchmark: 15, weight: 50 }
+    ],
+    "NW&FP Production|Electricity and Automation": [
+      { name: "Work Orders Completed", benchmark: 45, weight: 70 },
+      { name: "Calibrations/Inspections", benchmark: 25, weight: 30 }
+    ],
+    "NW&FP Production|FP": [
+      { name: "Production Output (units)", benchmark: 1, weight: 100 }
+    ],
+    "NW&FP Production|Maintenance": [
+      { name: "Work Orders Completed", benchmark: 50, weight: 70 },
+      { name: "Preventive Maintenance Tasks", benchmark: 30, weight: 30 }
+    ],
+    "NW&FP Production|NW Production": [
+      { name: "Production Output (units)", benchmark: 1, weight: 100 }
+    ],
+    "NW&FP Production|NW&FP": [
+      { name: "Production Lines Managed", benchmark: 1, weight: 100 }
+    ],
+    "Purchasing|Purchasing": [
+      { name: "PO Items Processed", benchmark: 350, weight: 70 },
+      { name: "Supplier Negotiations", benchmark: 8, weight: 30 }
+    ],
+    "Purchasing|Raw Material & Packaging": [
+      { name: "PO Items Processed", benchmark: 320, weight: 60 },
+      { name: "Supplier Contracts Managed", benchmark: 15, weight: 25 },
+      { name: "Material Specifications Updated", benchmark: 12, weight: 15 }
+    ],
+    "Purchasing|Technical and Indirect Purchasing": [
+      { name: "PO Items Processed", benchmark: 356, weight: 70 },
+      { name: "Supplier RFQs/Negotiations", benchmark: 10, weight: 20 },
+      { name: "Service Contracts (SVCS) Managed", benchmark: 8, weight: 10 }
+    ],
+    "Quality|Call Center": [
+      { name: "Calls Handled", benchmark: 1200, weight: 80 },
+      { name: "Complaints Resolved", benchmark: 100, weight: 20 }
+    ],
+    "Quality|Hygiene": [
+      { name: "Quality Inspections (batches)", benchmark: 80, weight: 60 },
+      { name: "Lab Tests Performed", benchmark: 200, weight: 40 }
+    ],
+    "Quality|NW&FP": [
+      { name: "Quality Inspections (batches)", benchmark: 80, weight: 60 },
+      { name: "Lab Tests Performed", benchmark: 200, weight: 40 }
+    ],
+    "Quality|QMS&QM": [
+      { name: "Quality Audits Conducted", benchmark: 6, weight: 40 },
+      { name: "CAPA/NCR Cases Managed", benchmark: 20, weight: 40 },
+      { name: "Procedures/Documents Updated", benchmark: 10, weight: 20 }
+    ],
+    "Quality|Tissue": [
+      { name: "Quality Inspections (batches)", benchmark: 80, weight: 60 },
+      { name: "Lab Tests Performed", benchmark: 200, weight: 40 }
+    ],
+    "Regulatory and Corporate Affairs|Regulatory and Corporate Affairs": [
+      { name: "Regulatory Submissions", benchmark: 6, weight: 50 },
+      { name: "Product Registrations Maintained", benchmark: 25, weight: 50 }
+    ],
+    "Sales|Away From Home Channel": [
+      { name: "Customer Accounts Managed", benchmark: 25, weight: 60 },
+      { name: "Customer Visits", benchmark: 80, weight: 40 }
+    ],
+    "Sales|Medical Channel": [
+      { name: "Medical Visits (per rep)", benchmark: 200, weight: 80 },
+      { name: "KOL/Doctor Engagements", benchmark: 40, weight: 20 }
+    ],
+    "Sales|Modern Channel": [
+      { name: "Stores Visited", benchmark: 240, weight: 60 },
+      { name: "Key Accounts Managed", benchmark: 8, weight: 40 }
+    ],
+    "Sales|Sales": [
+      { name: "Customer Visits", benchmark: 200, weight: 60 },
+      { name: "Accounts Managed", benchmark: 30, weight: 40 }
+    ],
+    "Sales|Traditional Channel": [
+      { name: "Outlet Visits (per rep)", benchmark: 800, weight: 80 },
+      { name: "Outlets Covered", benchmark: 120, weight: 20 }
+    ],
+    "Supply Chain|Customer Services": [
+      { name: "Orders Processed", benchmark: 600, weight: 60 },
+      { name: "Customer Inquiries Resolved", benchmark: 400, weight: 40 }
+    ],
+    "Supply Chain|Import Export Operations": [
+      { name: "Shipments Processed", benchmark: 60, weight: 70 },
+      { name: "Customs Documents Managed", benchmark: 80, weight: 30 }
+    ],
+    "Supply Chain|Planning": [
+      { name: "SKUs Planned", benchmark: 200, weight: 60 },
+      { name: "S&OP Cycles Managed", benchmark: 1, weight: 40 }
+    ],
+    "Supply Chain|Supply Chain": [
+      { name: "End-to-End Orders Managed", benchmark: 400, weight: 60 },
+      { name: "S&OP/Planning Cycles", benchmark: 1, weight: 40 }
+    ],
+    "Supply Chain|Technical Maintenance": [
+      { name: "Work Orders Completed", benchmark: 50, weight: 70 },
+      { name: "Preventive Maintenance Tasks", benchmark: 30, weight: 30 }
+    ],
+    "Supply Chain|Transportation": [
+      { name: "Shipments/Loads Managed", benchmark: 200, weight: 70 },
+      { name: "Routes Optimized", benchmark: 20, weight: 30 }
+    ],
+    "Supply Chain|Warehouse Operations": [
+      { name: "Pallets Handled", benchmark: 1500, weight: 60 },
+      { name: "Picks Processed", benchmark: 3000, weight: 40 }
+    ],
+    "Tissue Production|Converting Production": [
+      { name: "Production Output (rolls/tons)", benchmark: 1, weight: 100 }
+    ],
+    "Tissue Production|Electrical and Automation Maintenance": [
+      { name: "Work Orders Completed", benchmark: 45, weight: 70 },
+      { name: "Calibrations/Inspections", benchmark: 25, weight: 30 }
+    ],
+    "Tissue Production|Energy": [
+      { name: "Energy System Inspections", benchmark: 20, weight: 60 },
+      { name: "Energy Performance Reports", benchmark: 8, weight: 40 }
+    ],
+    "Tissue Production|Mechanical Maintenance": [
+      { name: "Work Orders Completed", benchmark: 50, weight: 70 },
+      { name: "Equipment Inspections", benchmark: 30, weight: 30 }
+    ],
+    "Tissue Production|Tissue Production": [
+      { name: "Production Lines Managed", benchmark: 1, weight: 50 },
+      { name: "Shifts Covered", benchmark: 22, weight: 50 }
+    ],
+    "Trade Marketing|Sales Support": [
+      { name: "Sales Reports/Dashboards", benchmark: 20, weight: 60 },
+      { name: "Sales Team Inquiries Resolved", benchmark: 80, weight: 40 }
+    ],
+    "Trade Marketing|Trade Marketing": [
+      { name: "Trade Promotions Executed", benchmark: 5, weight: 50 },
+      { name: "Channel Programs Managed", benchmark: 4, weight: 50 }
+    ]
+  };
+
   let currentLang = 'en';
   let lastResult = null;
 
   const t = {
     en: {
-      selectFnFirst: 'Select function first...',
-      selectUnit: 'Select unit...',
-      selectFn: 'Select function...',
-      fillAll: 'Please fill in Current HC and Monthly Volume.',
+      selectFnFirst: 'Select function first...', selectUnit: 'Select unit...', selectFn: 'Select function...',
+      fillHC: 'Please enter Current HC.', addOneMetric: 'Please add at least one metric with volume > 0.',
+      weightSum: 'Total weight must equal 100% (currently ',
       surplus: 'Surplus', deficit: 'Deficit', balanced: 'Balanced',
       conservative: 'Conservative', moderate: 'Moderate', aggressive: 'Aggressive',
-      requiredFTE: 'Required FTE',
-      summary: 'Summary',
+      requiredFTE: 'Required FTE', summary: 'Summary',
       function: 'Function', orgUnit: 'Organizational Unit',
-      currentHC: 'Current HC', monthlyVol: 'Monthly Volume',
-      currentPerPerson: 'Current per Person',
-      workingHrs: 'Working Hours',
+      currentHC: 'Current HC', workingHrs: 'Working Hours',
       hrsDay: 'hours/day', month: 'month',
-      hcVsRequired: 'Current HC vs. Required FTE by Scenario',
-      currentHCLbl: 'Current HC',
-      copied: 'Summary copied to clipboard!',
-      copy: '📋 Copy Summary',
+      breakdownTitle: 'Per-Metric Breakdown (Moderate Scenario)',
+      colMetric: 'Metric', colVolume: 'Monthly Volume', colBenchmark: 'Benchmark',
+      colWeight: 'Weight', colReqFTE: 'Standalone FTE', colContrib: 'Weighted FTE',
+      total: 'Total Weighted Required FTE',
+      copied: 'Summary copied to clipboard!', copy: '📋 Copy Summary',
       fteSurplus: 'FTE surplus', fteDeficit: 'FTE deficit',
-      analysisFor: 'Analysis for'
+      analysisFor: 'Analysis for', genericMetric: 'Custom Metric',
+      noPreset: 'No preset for this unit — add metrics manually below.'
     },
     tr: {
-      selectFnFirst: 'Önce fonksiyon seçin...',
-      selectUnit: 'Birim seçin...',
-      selectFn: 'Fonksiyon seçin...',
-      fillAll: 'Lütfen Mevcut HC ve Aylık İş Hacmi alanlarını doldurun.',
+      selectFnFirst: 'Önce fonksiyon seçin...', selectUnit: 'Birim seçin...', selectFn: 'Fonksiyon seçin...',
+      fillHC: 'Lütfen Mevcut HC alanını doldurun.', addOneMetric: 'Lütfen en az bir metrik ekleyin (hacim > 0).',
+      weightSum: 'Toplam ağırlık 100% olmalı (şu an ',
       surplus: 'Fazlalık', deficit: 'Eksiklik', balanced: 'Dengeli',
       conservative: 'Konservatif', moderate: 'Orta', aggressive: 'Agresif',
-      requiredFTE: 'Gerekli FTE',
-      summary: 'Özet',
+      requiredFTE: 'Gerekli FTE', summary: 'Özet',
       function: 'Fonksiyon', orgUnit: 'Organizasyonel Birim',
-      currentHC: 'Mevcut HC', monthlyVol: 'Aylık İş Hacmi',
-      currentPerPerson: 'Kişi Başı Mevcut',
-      workingHrs: 'Çalışma Saati',
+      currentHC: 'Mevcut HC', workingHrs: 'Çalışma Saati',
       hrsDay: 'saat/gün', month: 'ay',
-      hcVsRequired: 'Senaryolara Göre Mevcut HC vs. Gerekli FTE',
-      currentHCLbl: 'Mevcut HC',
-      copied: 'Özet panoya kopyalandı!',
-      copy: '📋 Özeti Kopyala',
+      breakdownTitle: 'Metrik Bazlı Detay (Orta Senaryo)',
+      colMetric: 'Metrik', colVolume: 'Aylık Hacim', colBenchmark: 'Benchmark',
+      colWeight: 'Ağırlık', colReqFTE: 'Bağımsız FTE', colContrib: 'Ağırlıklı FTE',
+      total: 'Toplam Ağırlıklı Gerekli FTE',
+      copied: 'Özet panoya kopyalandı!', copy: '📋 Özeti Kopyala',
       fteSurplus: 'FTE fazla', fteDeficit: 'FTE eksik',
-      analysisFor: 'Analiz —'
+      analysisFor: 'Analiz —', genericMetric: 'Özel Metrik',
+      noPreset: 'Bu birim için varsayılan yok — aşağıdan manuel ekleyin.'
     }
   };
 
@@ -501,10 +720,9 @@
 
   function init() {
     const fnSelect = document.getElementById('functionSelect');
-    Object.keys(data).sort().forEach(fn => {
+    Object.keys(orgData).sort().forEach(fn => {
       const opt = document.createElement('option');
-      opt.value = fn;
-      opt.textContent = fn;
+      opt.value = fn; opt.textContent = fn;
       fnSelect.appendChild(opt);
     });
   }
@@ -517,8 +735,7 @@
     if (!fn) {
       ouSelect.disabled = true;
       const opt = document.createElement('option');
-      opt.value = '';
-      opt.textContent = t[currentLang].selectFnFirst;
+      opt.value = ''; opt.textContent = t[currentLang].selectFnFirst;
       ouSelect.appendChild(opt);
       document.getElementById('card3').style.display = 'none';
       document.getElementById('card4').style.display = 'none';
@@ -526,23 +743,18 @@
       document.getElementById('step1Num').classList.remove('done');
       return;
     }
-
     document.getElementById('step1Num').classList.add('done');
     document.getElementById('card2').classList.add('active');
-
     ouSelect.disabled = false;
-    const placeholder = document.createElement('option');
-    placeholder.value = '';
-    placeholder.textContent = t[currentLang].selectUnit;
-    ouSelect.appendChild(placeholder);
 
-    data[fn].sort().forEach(ou => {
+    const placeholder = document.createElement('option');
+    placeholder.value = ''; placeholder.textContent = t[currentLang].selectUnit;
+    ouSelect.appendChild(placeholder);
+    orgData[fn].sort().forEach(ou => {
       const opt = document.createElement('option');
-      opt.value = ou;
-      opt.textContent = ou;
+      opt.value = ou; opt.textContent = ou;
       ouSelect.appendChild(opt);
     });
-
     document.getElementById('card3').style.display = 'none';
     document.getElementById('card4').style.display = 'none';
   }
@@ -554,11 +766,7 @@
       document.getElementById('card3').style.display = 'block';
       document.getElementById('card3').classList.add('active');
       document.getElementById('card2').classList.remove('active');
-      // smart defaults: Purchasing functions get 300/356/400
-      const fn = document.getElementById('functionSelect').value;
-      if (fn === 'Purchasing') {
-        document.getElementById('metricName').value = 'PO Items';
-      }
+      loadPresets();
     } else {
       document.getElementById('card3').style.display = 'none';
       document.getElementById('card4').style.display = 'none';
@@ -566,23 +774,97 @@
     }
   }
 
+  function loadPresets() {
+    const fn = document.getElementById('functionSelect').value;
+    const ou = document.getElementById('orgUnitSelect').value;
+    const key = `${fn}|${ou}`;
+    const preset = presets[key];
+
+    document.getElementById('metricsTable').innerHTML = '';
+    const note = document.getElementById('presetNote');
+    if (preset && preset.length) {
+      preset.forEach(p => addMetric(p.name, '', p.benchmark, p.weight));
+      note.style.display = 'block';
+      note.innerHTML = `<strong>${currentLang==='tr'?'ℹ FMCG sektör varsayılanları yüklendi.':'ℹ FMCG sector defaults loaded.'}</strong> ${currentLang==='tr'?'Benchmark/ağırlıkları düzenleyin, satırları silin veya kendi metriklerinizi ekleyin.':'Adjust benchmarks/weights, remove rows, or add your own metrics as needed.'}`;
+    } else {
+      addMetric();
+      note.innerHTML = `<strong>ℹ</strong> ${t[currentLang].noPreset}`;
+    }
+    updateWeightTotal();
+  }
+
+  function clearMetrics() {
+    document.getElementById('metricsTable').innerHTML = '';
+    addMetric();
+    updateWeightTotal();
+  }
+
+  function addMetric(name = '', volume = '', benchmark = '', weight = '') {
+    const tbody = document.getElementById('metricsTable');
+    const row = document.createElement('div');
+    row.className = 'metrics-grid';
+    row.style.marginTop = '6px';
+    row.innerHTML = `
+      <input type="text" class="m-name" placeholder="${t[currentLang].genericMetric}" value="${name}">
+      <input type="number" class="m-volume" placeholder="0" min="0" value="${volume}" oninput="updateWeightTotal()">
+      <input type="number" class="m-benchmark" placeholder="0" min="0.1" step="0.1" value="${benchmark}">
+      <input type="number" class="m-weight" placeholder="0" min="0" max="100" step="0.5" value="${weight}" oninput="updateWeightTotal()">
+      <button class="remove-btn" onclick="removeMetric(this)" title="Remove">×</button>
+    `;
+    tbody.appendChild(row);
+    updateWeightTotal();
+  }
+
+  function removeMetric(btn) {
+    btn.closest('.metrics-grid').remove();
+    updateWeightTotal();
+  }
+
+  function getMetrics() {
+    const rows = document.querySelectorAll('#metricsTable .metrics-grid');
+    const metrics = [];
+    rows.forEach(r => {
+      const name = r.querySelector('.m-name').value.trim() || t[currentLang].genericMetric;
+      const volume = parseFloat(r.querySelector('.m-volume').value) || 0;
+      const benchmark = parseFloat(r.querySelector('.m-benchmark').value) || 0;
+      const weight = parseFloat(r.querySelector('.m-weight').value) || 0;
+      metrics.push({ name, volume, benchmark, weight });
+    });
+    return metrics;
+  }
+
+  function updateWeightTotal() {
+    const metrics = getMetrics();
+    const total = metrics.reduce((s, m) => s + m.weight, 0);
+    const box = document.getElementById('weightTotalBox');
+    const span = document.getElementById('weightTotal');
+    span.textContent = total.toFixed(1) + '%';
+    if (Math.abs(total - 100) < 0.1) {
+      box.classList.remove('warn'); box.classList.add('ok');
+    } else {
+      box.classList.remove('ok'); box.classList.add('warn');
+    }
+  }
+
   function calculate() {
     const fn = document.getElementById('functionSelect').value;
     const ou = document.getElementById('orgUnitSelect').value;
     const hc = parseFloat(document.getElementById('currentHC').value);
-    const vol = parseFloat(document.getElementById('monthlyVolume').value);
-    const metric = document.getElementById('metricName').value || 'transactions';
     const hours = parseFloat(document.getElementById('workingHours').value);
-    const bm1 = parseFloat(document.getElementById('bm1').value);
-    const bm2 = parseFloat(document.getElementById('bm2').value);
-    const bm3 = parseFloat(document.getElementById('bm3').value);
+    const m1 = parseFloat(document.getElementById('mult1').value);
+    const m2 = parseFloat(document.getElementById('mult2').value);
+    const m3 = parseFloat(document.getElementById('mult3').value);
 
-    if (!hc || !vol || !bm1 || !bm2 || !bm3) {
-      alert(t[currentLang].fillAll);
+    if (!hc) { alert(t[currentLang].fillHC); return; }
+    const metrics = getMetrics().filter(m => m.volume > 0 && m.benchmark > 0 && m.weight > 0);
+    if (metrics.length === 0) { alert(t[currentLang].addOneMetric); return; }
+    const weightSum = metrics.reduce((s, m) => s + m.weight, 0);
+    if (Math.abs(weightSum - 100) > 0.1) {
+      alert(t[currentLang].weightSum + weightSum.toFixed(1) + '%)');
       return;
     }
 
-    lastResult = { fn, ou, hc, vol, metric, hours, bm1, bm2, bm3 };
+    lastResult = { fn, ou, hc, hours, m1, m2, m3, metrics };
     renderResults(lastResult);
     document.getElementById('card4').style.display = 'block';
     document.getElementById('card4').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -591,23 +873,23 @@
   function renderResults(r) {
     const tr = t[currentLang];
     const scenarios = [
-      { label: tr.conservative, bm: r.bm1 },
-      { label: tr.moderate, bm: r.bm2 },
-      { label: tr.aggressive, bm: r.bm3 }
+      { label: tr.conservative, mult: r.m1 },
+      { label: tr.moderate, mult: r.m2 },
+      { label: tr.aggressive, mult: r.m3 }
     ];
 
     let html = '<div class="results-grid">';
     scenarios.forEach(sc => {
-      const required = r.vol / sc.bm;
-      const diff = r.hc - required;
+      const reqFTE = r.metrics.reduce((sum, m) =>
+        sum + (m.weight / 100) * (m.volume / (m.benchmark * sc.mult)), 0);
+      const diff = r.hc - reqFTE;
       const status = diff > 0.5 ? 'surplus' : (diff < -0.5 ? 'deficit' : 'balanced');
       const statusLabel = { surplus: tr.surplus, deficit: tr.deficit, balanced: tr.balanced }[status];
       const diffLabel = diff >= 0 ? `+${diff.toFixed(1)} ${tr.fteSurplus}` : `${diff.toFixed(1)} ${tr.fteDeficit}`;
-
       html += `
         <div class="scenario-card ${status}">
-          <div class="scenario-label">${sc.label} — ${sc.bm} ${r.metric}/${tr.month}</div>
-          <div class="scenario-value">${required.toFixed(1)}</div>
+          <div class="scenario-label">${sc.label} — ×${sc.mult.toFixed(2)}</div>
+          <div class="scenario-value">${reqFTE.toFixed(1)}</div>
           <div class="scenario-detail">${tr.requiredFTE}</div>
           <div class="scenario-status ${status}">${statusLabel}: ${diffLabel}</div>
         </div>
@@ -615,20 +897,42 @@
     });
     html += '</div>';
 
-    // Chart
-    html += renderChart(r, scenarios);
+    html += `<div class="breakdown-section"><h3>${tr.breakdownTitle}</h3>`;
+    html += `<div style="overflow-x:auto;"><table class="breakdown-table"><thead><tr>
+      <th>${tr.colMetric}</th>
+      <th class="right">${tr.colVolume}</th>
+      <th class="right">${tr.colBenchmark}</th>
+      <th class="right">${tr.colWeight}</th>
+      <th class="right">${tr.colReqFTE}</th>
+      <th class="right">${tr.colContrib}</th>
+    </tr></thead><tbody>`;
+    let totalContrib = 0;
+    r.metrics.forEach(m => {
+      const standalone = m.volume / (m.benchmark * r.m2);
+      const contrib = (m.weight / 100) * standalone;
+      totalContrib += contrib;
+      html += `<tr>
+        <td>${m.name}</td>
+        <td class="right">${m.volume.toLocaleString()}</td>
+        <td class="right">${m.benchmark}</td>
+        <td class="right">${m.weight.toFixed(1)}%</td>
+        <td class="right">${standalone.toFixed(2)}</td>
+        <td class="right"><strong>${contrib.toFixed(2)}</strong></td>
+      </tr>`;
+    });
+    html += `</tbody><tfoot><tr>
+      <td colspan="5">${tr.total}</td>
+      <td class="right">${totalContrib.toFixed(2)} FTE</td>
+    </tr></tfoot></table></div></div>`;
 
-    // Summary
-    const perPerson = (r.vol / r.hc).toFixed(0);
     html += `
       <div class="summary">
         <h3>${tr.summary}</h3>
         <div class="summary-row"><span>${tr.function}</span><span>${r.fn}</span></div>
         <div class="summary-row"><span>${tr.orgUnit}</span><span>${r.ou}</span></div>
         <div class="summary-row"><span>${tr.currentHC}</span><span>${r.hc} FTE</span></div>
-        <div class="summary-row"><span>${tr.monthlyVol}</span><span>${r.vol.toLocaleString()} ${r.metric}</span></div>
-        <div class="summary-row"><span>${tr.currentPerPerson}</span><span>${Number(perPerson).toLocaleString()} ${r.metric}/${tr.month}</span></div>
         <div class="summary-row"><span>${tr.workingHrs}</span><span>${r.hours} ${tr.hrsDay}</span></div>
+        <div class="summary-row"><span>${tr.colMetric} #</span><span>${r.metrics.length}</span></div>
       </div>
     `;
 
@@ -636,103 +940,34 @@
     document.getElementById('resultsSubtitle').textContent = `${tr.analysisFor} ${r.fn} / ${r.ou}`;
   }
 
-  function renderChart(r, scenarios) {
-    const tr = t[currentLang];
-    const w = 700, h = 260, padL = 50, padR = 20, padT = 30, padB = 50;
-    const innerW = w - padL - padR;
-    const innerH = h - padT - padB;
-
-    const required = scenarios.map(s => r.vol / s.bm);
-    const maxVal = Math.max(r.hc, ...required) * 1.15;
-    const yScale = v => padT + innerH - (v / maxVal) * innerH;
-    const groupW = innerW / scenarios.length;
-    const barW = Math.min(40, groupW / 3);
-
-    let svg = `<div class="chart-section"><h3>${tr.hcVsRequired}</h3><div class="chart-container"><svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:${w}px;height:auto;font-family:inherit;">`;
-
-    // Y axis grid lines
-    for (let i = 0; i <= 4; i++) {
-      const v = (maxVal / 4) * i;
-      const y = yScale(v);
-      svg += `<line x1="${padL}" y1="${y}" x2="${w-padR}" y2="${y}" stroke="#e5e7eb" stroke-width="1"/>`;
-      svg += `<text x="${padL-8}" y="${y+4}" text-anchor="end" font-size="11" fill="#6b7280">${v.toFixed(0)}</text>`;
-    }
-
-    // Bars
-    scenarios.forEach((sc, i) => {
-      const cx = padL + groupW * i + groupW/2;
-      const x1 = cx - barW - 2;
-      const x2 = cx + 2;
-      const reqVal = r.vol / sc.bm;
-      const status = (r.hc - reqVal) > 0.5 ? '#10b981' : ((r.hc - reqVal) < -0.5 ? '#ef4444' : '#f59e0b');
-
-      // Current HC bar (blue)
-      const hcY = yScale(r.hc);
-      svg += `<rect x="${x1}" y="${hcY}" width="${barW}" height="${padT+innerH-hcY}" fill="#2563eb" rx="3"/>`;
-      svg += `<text x="${x1+barW/2}" y="${hcY-6}" text-anchor="middle" font-size="11" font-weight="600" fill="#1e40af">${r.hc}</text>`;
-
-      // Required FTE bar (status color)
-      const rqY = yScale(reqVal);
-      svg += `<rect x="${x2}" y="${rqY}" width="${barW}" height="${padT+innerH-rqY}" fill="${status}" rx="3"/>`;
-      svg += `<text x="${x2+barW/2}" y="${rqY-6}" text-anchor="middle" font-size="11" font-weight="600" fill="${status}">${reqVal.toFixed(1)}</text>`;
-
-      // X label
-      svg += `<text x="${cx}" y="${h-padB+18}" text-anchor="middle" font-size="11" font-weight="600" fill="#374151">${sc.label}</text>`;
-      svg += `<text x="${cx}" y="${h-padB+32}" text-anchor="middle" font-size="10" fill="#9ca3af">${sc.bm}/${tr.month}</text>`;
-    });
-
-    // Legend
-    svg += `<g transform="translate(${padL},${10})">`;
-    svg += `<rect x="0" y="0" width="12" height="12" fill="#2563eb" rx="2"/>`;
-    svg += `<text x="18" y="10" font-size="11" fill="#374151">${tr.currentHCLbl}</text>`;
-    svg += `<rect x="100" y="0" width="12" height="12" fill="#6b7280" rx="2"/>`;
-    svg += `<text x="118" y="10" font-size="11" fill="#374151">${tr.requiredFTE}</text>`;
-    svg += `</g>`;
-
-    svg += `</svg></div></div>`;
-    return svg;
-  }
-
   function copyResults() {
     if (!lastResult) return;
     const r = lastResult;
     const tr = t[currentLang];
     const scenarios = [
-      { label: tr.conservative, bm: r.bm1 },
-      { label: tr.moderate, bm: r.bm2 },
-      { label: tr.aggressive, bm: r.bm3 }
+      { label: tr.conservative, mult: r.m1 },
+      { label: tr.moderate, mult: r.m2 },
+      { label: tr.aggressive, mult: r.m3 }
     ];
-    let text = `HC Planning Analysis\n`;
-    text += `=====================\n`;
-    text += `${tr.function}: ${r.fn}\n`;
-    text += `${tr.orgUnit}: ${r.ou}\n`;
-    text += `${tr.currentHC}: ${r.hc} FTE\n`;
-    text += `${tr.monthlyVol}: ${r.vol.toLocaleString()} ${r.metric}\n`;
-    text += `${tr.currentPerPerson}: ${(r.vol/r.hc).toFixed(0)} ${r.metric}/${tr.month}\n\n`;
-    text += `Scenarios:\n`;
-    scenarios.forEach(sc => {
-      const req = r.vol / sc.bm;
+    let text = `HC Planning Analysis\n=====================\n`;
+    text += `${tr.function}: ${r.fn}\n${tr.orgUnit}: ${r.ou}\n`;
+    text += `${tr.currentHC}: ${r.hc} FTE\n${tr.workingHrs}: ${r.hours} ${tr.hrsDay}\n\n`;
+    text += `Metrics:\n`;
+    r.metrics.forEach(m => {
+      text += `  - ${m.name}: ${m.volume.toLocaleString()} vol / ${m.benchmark} bm / ${m.weight}% wt\n`;
+    });
+    text += `\nScenarios:\n`;
+    scenarios.forEach(s => {
+      const req = r.metrics.reduce((sum, m) =>
+        sum + (m.weight / 100) * (m.volume / (m.benchmark * s.mult)), 0);
       const diff = r.hc - req;
-      text += `  ${sc.label} (${sc.bm}/${tr.month}): ${tr.requiredFTE} ${req.toFixed(1)} → ${diff>=0?'+':''}${diff.toFixed(1)} FTE\n`;
+      text += `  ${s.label} (×${s.mult}): ${tr.requiredFTE} ${req.toFixed(2)} → ${diff>=0?'+':''}${diff.toFixed(2)} FTE\n`;
     });
     navigator.clipboard.writeText(text).then(() => {
       const btn = document.getElementById('copyBtn');
-      const original = btn.innerHTML;
       btn.innerHTML = '✓ ' + tr.copied;
       setTimeout(() => btn.innerHTML = tr.copy, 2000);
     });
-  }
-
-  function resetForm() {
-    document.getElementById('currentHC').value = '';
-    document.getElementById('monthlyVolume').value = '';
-    document.getElementById('metricName').value = 'PO Items';
-    document.getElementById('bm1').value = 300;
-    document.getElementById('bm2').value = 356;
-    document.getElementById('bm3').value = 400;
-    document.getElementById('workingHours').value = 9;
-    document.getElementById('card4').style.display = 'none';
-    lastResult = null;
   }
 
   init();
