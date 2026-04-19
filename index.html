@@ -1199,16 +1199,31 @@ function setLang(lang) {
   // Re-render results if visible
   if (lastResult) renderResults(lastResult);
 
-  // Update team row field labels
+  // Update team row: translate preset country names + field labels
   document.querySelectorAll('#teamRows .team-row').forEach(row => {
+    const nameEn = row.dataset.nameEn;
+    const nameTr = row.dataset.nameTr;
+    if (nameEn && nameTr) {
+      const inp = row.querySelector('input[type="text"]');
+      if (inp && (inp.value === nameEn || inp.value === nameTr)) {
+        inp.value = lang === 'tr' ? nameTr : nameEn;
+      }
+    }
     const labels = row.querySelectorAll('.team-field-label');
     if (labels[0]) labels[0].textContent = L.teamName;
     if (labels[1]) labels[1].textContent = L.sumHC + ' (FTE)';
   });
 
-  // Update position name placeholders
-  document.querySelectorAll('#positionDefs input[type="text"]').forEach(inp => {
+  // Update position name inputs: translate preset position names + placeholders
+  document.querySelectorAll('#positionDefs .pos-def-row').forEach(row => {
+    const nameEn = row.dataset.nameEn;
+    const nameTr = row.dataset.nameTr;
+    const inp = row.querySelector('input[type="text"]');
+    if (!inp) return;
     inp.placeholder = L.posNamePh;
+    if (nameEn && nameTr && (inp.value === nameEn || inp.value === nameTr)) {
+      inp.value = lang === 'tr' ? nameTr : nameEn;
+    }
   });
 
   // Re-render position table with new language
@@ -1384,7 +1399,7 @@ function loadPositionPreset() {
         const inp = r.querySelector('input[type="text"]');
         return inp && (inp.value === country.name_en || inp.value === country.name_tr);
       });
-    if (!alreadyExists) addTeam(displayName);
+    if (!alreadyExists) addTeam(displayName, '', country.name_en, country.name_tr);
   });
 
   // Render position table first (creates inputs)
@@ -1665,7 +1680,7 @@ function toggleComparison() {
 }
 
 // ---- WORKLOAD ----
-function addTeam(name='', hc='') {
+function addTeam(name='', hc='', nameEn='', nameTr='') {
   const id  = ++teamIdCounter;
   teams.push({ id });
   const metrics = lastResult ? lastResult.metrics : [];
@@ -1675,6 +1690,8 @@ function addTeam(name='', hc='') {
   wrap.className = 'team-row';
   wrap.id = `team-row-${id}`;
   wrap.style.gridTemplateColumns = `1.4fr 0.8fr ${metrics.map(()=>'1fr').join(' ')} 40px`;
+  if (nameEn) wrap.dataset.nameEn = nameEn;
+  if (nameTr) wrap.dataset.nameTr = nameTr;
 
   let html = `
     <div class="team-field">
