@@ -1198,6 +1198,28 @@ function setLang(lang) {
 
   // Re-render results if visible
   if (lastResult) renderResults(lastResult);
+
+  // Update team row field labels
+  document.querySelectorAll('#teamRows .team-row').forEach(row => {
+    const labels = row.querySelectorAll('.team-field-label');
+    if (labels[0]) labels[0].textContent = L.teamName;
+    if (labels[1]) labels[1].textContent = L.sumHC + ' (FTE)';
+  });
+
+  // Update position name placeholders
+  document.querySelectorAll('#positionDefs input[type="text"]').forEach(inp => {
+    inp.placeholder = L.posNamePh;
+  });
+
+  // Re-render position table with new language
+  renderPositionTable();
+
+  // Re-render comparison results if data exists
+  if (lastCmpData.length && lastResult) {
+    calcComparison();
+    const baseVal = document.getElementById('baseTeamSelect').value;
+    if (baseVal) renderDirectComparison();
+  }
 }
 
 // =========================================================
@@ -1250,13 +1272,27 @@ function buildOUDropdown(fn) {
 // =========================================================
 // DROPDOWN HANDLERS
 // =========================================================
+function resetComparison() {
+  lastResult  = null;
+  lastCmpData = [];
+  teams       = [];
+  document.getElementById('teamRows').innerHTML        = '';
+  document.getElementById('cmpWorkloadResult').innerHTML = '';
+  document.getElementById('directCmpResult').innerHTML   = '';
+  document.getElementById('directCmpWrap').style.display = 'none';
+  document.getElementById('card4').style.display = 'none';
+  document.getElementById('card5').style.display = 'none';
+  const cmpBtn = document.getElementById('btn-show-cmp');
+  if (cmpBtn) cmpBtn.textContent = '⇄ ' + T[currentLang].btnCmp;
+}
+
 function onFunctionChange() {
   const fn = document.getElementById('functionSelect').value;
   buildOUDropdown(fn);
+  resetComparison();
 
   if (!fn) {
     document.getElementById('card3').style.display = 'none';
-    document.getElementById('card4').style.display = 'none';
     document.getElementById('card2').classList.remove('active');
     document.getElementById('step1Num').classList.remove('done');
     return;
@@ -1264,22 +1300,20 @@ function onFunctionChange() {
   document.getElementById('step1Num').classList.add('done');
   document.getElementById('card2').classList.add('active');
   document.getElementById('card3').style.display = 'none';
-  document.getElementById('card4').style.display = 'none';
 }
 
 function onOrgUnitChange() {
   const ou = document.getElementById('orgUnitSelect').value;
+  resetComparison();
   if (ou) {
     document.getElementById('step2Num').classList.add('done');
     document.getElementById('card3').style.display = 'block';
     document.getElementById('card3').classList.add('active');
     document.getElementById('card2').classList.remove('active');
     loadPresets();
-    // Show/hide position preset button
     showPositionPresetButton();
   } else {
     document.getElementById('card3').style.display = 'none';
-    document.getElementById('card4').style.display = 'none';
     document.getElementById('step2Num').classList.remove('done');
   }
 }
